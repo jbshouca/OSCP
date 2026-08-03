@@ -6,6 +6,14 @@ Build vulnerable web applications on your Debian VM and attack them from Kali. E
 
 ---
 
+## NOTE: To Avoid Breaking Curl Use Proper Encoding:
+
+```bash
+space  →  %20
+&      →  %26  (literal ampersand, not a URL parameter separator)
+'      →  %27  (single quotes around the bash -c argument)
+```
+
 ## Setup (Debian — 192.168.244.132)
 
 ```bash
