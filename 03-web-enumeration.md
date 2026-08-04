@@ -232,6 +232,11 @@ gobuster dir -u http://TARGET -w /usr/share/seclists/Discovery/Web-Content/raft-
 ```bash
 feroxbuster -u http://TARGET -w /usr/share/wordlists/dirb/common.txt -x php,txt,html
 ```
+### feroxbuster - output to a txt file
+
+```bash
+feroxbuster -u "http://192.168.244.132" -w /usr/share/wordlists/dirb/common.txt -x php,txt,html -o feroxbusterscan.txt
+```
 
 **What feroxbuster is:** Like gobuster but it scans RECURSIVELY. When it finds a directory like `/admin/`, it automatically scans INSIDE that directory for more content. Gobuster only scans the paths in your wordlist at the root level.
 
