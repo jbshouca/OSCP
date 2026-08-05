@@ -194,10 +194,7 @@ Set-ADUser -Identity "svc_backup" -ServicePrincipalNames @{Add="HTTP/dc01.corp.l
 
 # === WEAK PASSWORD POLICY ===
 # Set a weak domain password policy (for password spraying practice)
-Set-ADDefaultDomainPasswordPolicy -Identity "corp.local" `
-    -LockoutThreshold 0 `
-    -MinPasswordLength 4 `
-    -ComplexityEnabled $false
+Set-ADDefaultDomainPasswordPolicy -Identity "corp.local" ` -LockoutThreshold 0 ` -MinPasswordLength 4 ` -ComplexityEnabled $false
 ```
 
 ### Create SMB shares with useful content
