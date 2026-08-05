@@ -151,31 +151,19 @@ New-ADOrganizationalUnit -Name "HR" -Path "DC=corp,DC=local"
 New-ADOrganizationalUnit -Name "Service Accounts" -Path "DC=corp,DC=local"
 
 # Regular users
-New-ADUser -Name "John Smith" -SamAccountName "jsmith" -UserPrincipalName "jsmith@corp.local" `
-    -Path "OU=IT,DC=corp,DC=local" -AccountPassword (ConvertTo-SecureString "Welcome2026!" -AsPlainText -Force) `
-    -Enabled $true -PasswordNeverExpires $true
+New-ADUser -Name "John Smith" -SamAccountName "jsmith" -UserPrincipalName "jsmith@corp.local" ` -Path "OU=IT,DC=corp,DC=local" -AccountPassword (ConvertTo-SecureString "Welcome2026!" -AsPlainText -Force) ` -Enabled $true -PasswordNeverExpires $true
 
-New-ADUser -Name "Sarah Johnson" -SamAccountName "sjohnson" -UserPrincipalName "sjohnson@corp.local" `
-    -Path "OU=HR,DC=corp,DC=local" -AccountPassword (ConvertTo-SecureString "Summer2026!" -AsPlainText -Force) `
-    -Enabled $true -PasswordNeverExpires $true
+New-ADUser -Name "Sarah Johnson" -SamAccountName "sjohnson" -UserPrincipalName "sjohnson@corp.local" ` -Path "OU=HR,DC=corp,DC=local" -AccountPassword (ConvertTo-SecureString "Summer2026!" -AsPlainText -Force) ` -Enabled $true -PasswordNeverExpires $true
 
-New-ADUser -Name "Mike Chen" -SamAccountName "mchen" -UserPrincipalName "mchen@corp.local" `
-    -Path "OU=IT,DC=corp,DC=local" -AccountPassword (ConvertTo-SecureString "P@ssw0rd123" -AsPlainText -Force) `
-    -Enabled $true -PasswordNeverExpires $true
+New-ADUser -Name "Mike Chen" -SamAccountName "mchen" -UserPrincipalName "mchen@corp.local" ` -Path "OU=IT,DC=corp,DC=local" -AccountPassword (ConvertTo-SecureString "P@ssw0rd123" -AsPlainText -Force) ` -Enabled $true -PasswordNeverExpires $true
 
 # IT admin user (local admin on workstations)
-New-ADUser -Name "IT Admin" -SamAccountName "itadmin" -UserPrincipalName "itadmin@corp.local" `
-    -Path "OU=IT,DC=corp,DC=local" -AccountPassword (ConvertTo-SecureString "ITadm1n@2026" -AsPlainText -Force) `
-    -Enabled $true -PasswordNeverExpires $true
+New-ADUser -Name "IT Admin" -SamAccountName "itadmin" -UserPrincipalName "itadmin@corp.local" ` -Path "OU=IT,DC=corp,DC=local" -AccountPassword (ConvertTo-SecureString "ITadm1n@2026" -AsPlainText -Force) ` -Enabled $true -PasswordNeverExpires $true
 
 # Service accounts (for Kerberoasting practice)
-New-ADUser -Name "SQL Service" -SamAccountName "svc_sql" -UserPrincipalName "svc_sql@corp.local" `
-    -Path "OU=Service Accounts,DC=corp,DC=local" -AccountPassword (ConvertTo-SecureString "SQLserv1ce!" -AsPlainText -Force) `
-    -Enabled $true -PasswordNeverExpires $true
+New-ADUser -Name "SQL Service" -SamAccountName "svc_sql" -UserPrincipalName "svc_sql@corp.local" ` -Path "OU=Service Accounts,DC=corp,DC=local" -AccountPassword (ConvertTo-SecureString "SQLserv1ce!" -AsPlainText -Force) ` -Enabled $true -PasswordNeverExpires $true
 
-New-ADUser -Name "Backup Service" -SamAccountName "svc_backup" -UserPrincipalName "svc_backup@corp.local" `
-    -Path "OU=Service Accounts,DC=corp,DC=local" -AccountPassword (ConvertTo-SecureString "Backup2026!" -AsPlainText -Force) `
-    -Enabled $true -PasswordNeverExpires $true -Description "Temp password: Backup2026!"
+New-ADUser -Name "Backup Service" -SamAccountName "svc_backup" -UserPrincipalName "svc_backup@corp.local" ` -Path "OU=Service Accounts,DC=corp,DC=local" -AccountPassword (ConvertTo-SecureString "Backup2026!" -AsPlainText -Force) ` -Enabled $true -PasswordNeverExpires $true -Description "Temp password: Backup2026!"
 ```
 
 ### Set up groups and memberships
